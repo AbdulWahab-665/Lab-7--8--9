@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdul Wahab Portfolio</title>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Reset-ish */
+    :root{--gap:16px;--max-width:1100px;--accent:#0d6efd}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; padding:24px; display:flex; justify-content:center}
+    .page{width:100%; max-width:var(--max-width)}
+
+    /* Flex layout */
+    header.site-header{display:flex; align-items:center; justify-content:space-between; gap:var(--gap); padding:16px 0}
+    .brand{display:flex; gap:12px; align-items:center}
+    .brand .logo{width:48px; height:48px; border-radius:8px; background:linear-gradient(135deg,#6ea8fe,#0d6efd); display:flex; align-items:center; justify-content:center; color:white; font-weight:700}
+
+    .layout{display:flex; gap:24px; align-items:flex-start}
+    main.content{flex:1; background:#fff; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,12,24,0.06)}
+    aside.sidebar{width:300px; flex-shrink:0; background:#fff; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,12,24,0.06)}
+    footer.site-footer{margin-top:20px; padding:10px 0; text-align:center; color:#555}
+
+    /* Small utilities */
+    .hero{display:flex; gap:16px; align-items:center}
+    .hero .intro{flex:1}
+    .skills{display:flex; gap:8px; flex-wrap:wrap}
+    .skill{padding:6px 10px; border-radius:999px; background:#eef3ff; color:var(--accent); font-weight:600}
+
+    /* Bootstrap cards area: keep spacing consistent */
+    .projects .card{border:0}
+
+    /* Media queries */
+    /* Mobile first: stack everything */
+    @media (max-width: 600px){
+      body{padding:12px}
+      header.site-header{flex-direction:column; align-items:flex-start}
+      .layout{flex-direction:column}
+      aside.sidebar{width:100%}
+    }
+
+    /* Tablet: keep content then sidebar below or side-by-side depending on space */
+    @media (min-width:601px) and (max-width:899px){
+      .layout{flex-direction:column}
+      aside.sidebar{width:100%}
+    }
+
+    /* Desktop: two-column layout */
+    @media (min-width:900px){
+      .layout{flex-direction:row}
+      aside.sidebar{position:sticky; top:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header with Bootstrap navbar (component recreated using Bootstrap classes) -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">AW</div>
+        <div>
+          <h1 style="margin:0;font-size:1.1rem">Abdul's Portfolio</h1>
+          <div style="font-size:0.85rem;color:#666">Frontend developer • Responsive layouts</div>
+        </div>
+      </div>
+
+      <!-- Bootstrap Navbar (simple) -->
+      <nav class="navbar navbar-expand-sm bg-body">
+        <div class="container-fluid p-0">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Layout: content + sidebar using Flexbox -->
+    <div class="layout">
+      <main class="content">
+        <section class="hero">
+          <div class="intro">
+            <h2>Hello — I build responsive websites</h2>
+            <p>I focus on clean UI, semantic HTML, and accessible components. This lab demonstrates a Flexbox-based page with media queries and one Bootstrap component (below).</p>
+            <div class="skills" aria-hidden>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">Flexbox</span>
+              <span class="skill">Bootstrap</span>
+            </div>
+          </div>
+          <div style="min-width:120px;text-align:center">
+            <img src="https://via.placeholder.com/120x120.png?text=You" alt="avatar" style="width:96px;height:96px;border-radius:10px;object-fit:cover">
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Bootstrap card grid component recreated with Bootstrap classes -->
+        <section id="projects">
+          <h3>Selected Projects</h3>
+          <p class="text-muted">A responsive card grid built with Bootstrap utility classes and the grid system.</p>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 projects">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/600x320" class="card-img-top" alt="project 1">
+                <div class="card-body">
+                  <h5 class="card-title">Project One</h5>
+                  <p class="card-text">A short description of the project, demonstrating responsive images and text wrapping.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/600x320" class="card-img-top" alt="project 2">
+                <div class="card-body">
+                  <h5 class="card-title">Project Two</h5>
+                  <p class="card-text">A short description of the project — mobile-first, accessible, and fast.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img src="https://via.placeholder.com/600x320" class="card-img-top" alt="project 3">
+                <div class="card-body">
+                  <h5 class="card-title">Project Three</h5>
+                  <p class="card-text">A short description of the project — showcases layouts and interactions.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <hr />
+
+        <section id="about">
+          <h3>About</h3>
+          <p>This page uses Flexbox to structure the main layout and media queries at 600px and 900px to adjust flow for mobile, tablet, and desktop.</p>
+          <ul>
+            <li>Mobile (&le;600px): stack header, content, sidebar, footer vertically.</li>
+            <li>Tablet (601–899px): content and sidebar stacked, wider content area.</li>
+            <li>Desktop (≥900px): two-column layout with sticky sidebar.</li>
+          </ul>
+        </section>
+ 
+      </main>
+
+      <aside class="sidebar" aria-labelledby="contact">
+        <h4 id="contact">Contact</h4>
+        <p>Email: <a href="mailto:145abdulwahb186@gmail.com">145abdulwahb186@gmail.com</a></p>
+        <p>Location: Lahore, Pakistan</p>
+
+        <hr />
+
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <hr />
+
+        <h5>Tools</h5>
+        <p>VS Code • Live Server • Bootstrap CDN</p>
+      </aside>
+    </div>
+
+    <footer class="site-footer">© 2025 Abdul Wahab — Responsive Design Lab</footer>
+  </div>
+
+  <!-- Bootstrap JS (for navbar toggler) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
