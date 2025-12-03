@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 11 - Canvas & SVG</title>
+  <link rel="stylesheet" href="lab11.css">
+</head>
+<body>
+
+  <h1>Lab 11 — Drawing & SVG Animation</h1>
+
+  <section id="canvasArea">
+    <h2>Canvas Drawing App</h2>
+
+    <div class="toolbar">
+      <button id="clearBtn">Clear</button>
+      <button id="saveBtn">Save Image</button>
+      <input type="color" id="colorPicker" value="#000000">
+      <input type="range" id="sizePicker" min="1" max="20" value="4">
+    </div>
+
+    <canvas id="drawCanvas" width="700" height="400"></canvas>
+  </section>
+
+  <section id="svgArea">
+    <h2>SVG Animation Example</h2>
+
+    <svg width="300" height="120">
+      <circle id="ball" cx="20" cy="60" r="15" fill="tomato">
+        <animate
+          attributeName="cx"
+          from="20"
+          to="280"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+      </circle>
+    </svg>
+  </section>
+
+  <script src="lab11.js"></script>
+</body>
+</html>

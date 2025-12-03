@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f3f7;
+  padding: 25px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+#canvasArea, #svgArea {
+  max-width: 800px;
+  margin: 25px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.toolbar {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 4px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fcc;
+}
+
+canvas {
+  border: 1px solid #aaa;
+  display: block;
+  margin: auto;
+}
